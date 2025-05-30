@@ -1,0 +1,305 @@
+/* ✅ Fond général */
+.login-register-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/images6.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* ✅ Boîte principale */
+.wrapper {
+  position: relative;
+  width: 850px;
+  height: 600px;
+  border: 2px solid #0ef;
+  border-radius: 12px;
+  box-shadow: 0 0 40px #0ef;
+  overflow: hidden;
+  margin: 80px auto;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* ✅ Zones formulaire */
+.form-box {
+  width: 48%;
+  color: black;
+}
+
+.form-box h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0ef;
+  font-family: "Century Schoolbook", Georgia, serif;
+  text-shadow:
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 30px #0ef;
+  animation: login-neon 2.5s ease-in-out infinite alternate;
+}
+
+/* ✅ Effet néon pour titres */
+@keyframes login-neon {
+  0% {
+    text-shadow:
+      0 0 10px #0ef,
+      0 0 20px #0ef,
+      0 0 30px #0ef;
+    color: #0ef;
+  }
+  100% {
+    text-shadow:
+      0 0 20px #0ef,
+      0 0 35px #0ef,
+      0 0 50px #0ef;
+    color: black;
+  }
+}
+
+/* ✅ Inputs centrés */
+.input-box {
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: black;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+}
+
+.input-box label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #0ef;
+  text-shadow:
+    0 0 8px #0ef,
+    0 0 16px #0ef;
+  text-align: center;
+}
+
+/* ✅ Bouton stylé */
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #0ef;
+  color: #0ef;
+  background: transparent;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0ef;
+  color: black;
+}
+
+/* ✅ Lien login/register */
+.logreg-link {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.logreg-link a {
+  color: #0ef;
+  cursor: pointer;
+}
+
+/* ✅ Section info */
+.info {
+  width: 48%;
+  color: black;
+}
+
+.info h1 {
+  font-size: 24px;
+  color: #0ef;
+  margin-bottom: 10px;
+}
+
+/* ✅ Phrase avec effet néon puissant */
+.info.register p {
+  font-weight: bold;
+  font-family: "Century Schoolbook", Georgia, serif;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  text-shadow:
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 30px #0ef,
+    0 0 40px #0ef,
+    0 0 70px #0ef,
+    0 0 100px #0ef,
+    0 0 150px #0ef;
+  animation: intense-neon 3s ease-in-out infinite alternate;
+}
+
+/* ✅ Animation fluide néon intense */
+@keyframes intense-neon {
+  0% {
+    text-shadow:
+      0 0 20px #0ef,
+      0 0 30px #0ef,
+      0 0 60px #0ef,
+      0 0 80px #0ef;
+    opacity: 0.95;
+  }
+  100% {
+    text-shadow:
+      0 0 40px #0ef,
+      0 0 70px #0ef,
+      0 0 100px #0ef,
+      0 0 140px #0ef;
+    opacity: 1;
+  }
+}
+
+/* ✅ Effet "BIENVENUE !" animé au-dessus de la phrase d'accueil */
+.info.register p::before {
+  content: "BIENVENUE !";
+  display: block;
+  font-size: 32px;
+  color: #0ef;
+  font-family: "Century Schoolbook", Georgia, serif;
+  text-shadow:
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 40px #0ef,
+    0 0 60px #0ef;
+  margin-bottom: 15px;
+  animation: bounce-glow 2.5s ease-in-out infinite;
+}
+
+/* ✅ Animation rebond + néon */
+@keyframes bounce-glow {
+  0% {
+    transform: translateY(0);
+    text-shadow:
+      0 0 10px #0ef,
+      0 0 20px #0ef,
+      0 0 40px #0ef;
+  }
+  50% {
+    transform: translateY(-10px);
+    text-shadow:
+      0 0 20px #0ef,
+      0 0 40px #0ef,
+      0 0 60px #0ef;
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow:
+      0 0 10px #0ef,
+      0 0 20px #0ef,
+      0 0 40px #0ef;
+  }
+}
+
+/* ✅ Autres styles */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ✅ Transitions login/register */
+.wrapper .form-box.login,
+.wrapper .form-box.register,
+.wrapper .info.login,
+.wrapper .info.register {
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.wrapper .form-box.login,
+.wrapper .info.login {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login,
+.wrapper.active .info.login {
+  transform: translateX(-100%);
+}
+
+.wrapper.active .form-box.register,
+.wrapper.active .info.register {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.wrapper .form-box.register,
+.wrapper .info.register {
+  transform: translateX(100%);
+}
+
+.form-box.login,
+.info.login {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s ease;
+}
+
+.form-box.register,
+.info.register {
+  transform: translateX(100%);
+  opacity: 1;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+.wrapper.active .form-box.login,
+.wrapper.active .info.login {
+  transform: translateX(-100%);
+  opacity: 1;
+  visibility: hidden;
+}
+
+.wrapper.active .form-box.register,
+.wrapper.active .info.register {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+

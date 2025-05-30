@@ -1,0 +1,8 @@
+
+body {
+  background: url("/assets/img/images6.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
