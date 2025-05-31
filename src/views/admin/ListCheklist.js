@@ -425,8 +425,3 @@ export default function ListCheklist() {
     </>
   );
 }
-
-
-
-
-

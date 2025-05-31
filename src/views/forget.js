@@ -62,8 +62,3 @@ export default function Login() {
     </>
   );
 }
-
-
-
-
-

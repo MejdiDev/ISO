@@ -51,8 +51,3 @@ export async function verifyCode(email, code) {
 export async function resetPassword(email, newPassword) {
   return await axios.post(`${apiurl}/reset-password`, { email, newPassword });
 }
-
-
-
-
-

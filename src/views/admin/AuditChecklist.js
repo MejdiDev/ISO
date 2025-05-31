@@ -544,8 +544,3 @@ const handleSaveChecklist = async () => {
   );
 }
 // </create_file>
-
-
-
-
-

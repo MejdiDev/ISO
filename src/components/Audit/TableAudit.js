@@ -151,7 +151,7 @@ const handleAuditTypeChange = (e) => {
   // Fonction pour obtenir la couleur du statut
   const getStatusColor = (status) => {
     switch (status) {
-      case "Terminé":
+      case "TerminÃ©":
         return "bg-emerald-200 text-emerald-700";
       case "En cours":
         return "bg-orange-200 text-orange-700";
@@ -170,7 +170,7 @@ const handleAuditTypeChange = (e) => {
 
   // Fonction pour afficher l'Ã©cart
   const renderEcart = (audit) => {
-    if (audit.status !== "Terminé") {
+    if (audit.status !== "TerminÃ©") {
       return "-";
     }
     return (
@@ -180,7 +180,7 @@ const handleAuditTypeChange = (e) => {
     );
   };
 
- // Gestionnaire pour l'édition
+  // Gestionnaire pour l'Ã©dition
   const handleEdit = (audit) => {
     setEditFormData({
       name: audit.name,
@@ -199,7 +199,7 @@ const handleAuditTypeChange = (e) => {
     setShowEditModal(true);
   };
 
-  // Gestionnaire pour la mise à jour du formulaire
+  // Gestionnaire pour la mise Ã  jour du formulaire
   const handleEditFormChange = (e) => {
     const { name, value } = e.target;
     setEditFormData((prev) => ({
@@ -214,10 +214,10 @@ const handleAuditTypeChange = (e) => {
     try {
       // TODO: IntÃ©gration API
       // await axios.put(`${API_BASE_URL}/audits/${selectedAudit.id}`, editFormData);
-      console.log("Mise à jour de l'audit:", editFormData);
+      console.log("Mise Ã  jour de l'audit:", editFormData);
       setShowEditModal(false);
     } catch (error) {
-      console.error("Erreur lors de la mise à jour::", error);
+      console.error("Erreur lors de la mise Ã  jour:", error);
     }
   };
 
@@ -245,16 +245,16 @@ const handleAuditTypeChange = (e) => {
   // Fonction pour exporter les donnÃ©es d'audit
   const handleExport = async () => {
     try {
-      // ====== INTÉGRATION BACKEND ======
-      // 1. Créer une route dans votre API backend : GET /api/audits/:id/export
+      // ====== INTÃ‰GRATION BACKEND ======
+      // 1. CrÃ©er une route dans votre API backend : GET /api/audits/:id/export
       // 2. Le backend devrait :
-      //    - Récupérer l'audit avec l'ID spécifié
-      //    - Formater les données selon vos besoins
+      //    - RÃ©cupÃ©rer l'audit avec l'ID spÃ©cifiÃ©
+      //    - Formater les donnÃ©es selon vos besoins
       //    - Renvoyer un fichier JSON ou CSV
       // 3. Exemple d'appel API :
       // const response = await axios.get(`${API_BASE_URL}/audits/${selectedAudit.id}/export`);
       //
-      // 4. Traitement de la réponse :
+      // 4. Traitement de la rÃ©ponse :
       // const blob = new Blob([response.data], { type: 'application/json' });
       // const url = window.URL.createObjectURL(blob);
       // const link = document.createElement('a');
@@ -264,18 +264,19 @@ const handleAuditTypeChange = (e) => {
       // link.click();
       // link.remove();
 
-      console.log("Export des données d'audit:", selectedAudit.id);
+      console.log("Export des donnÃ©es d'audit:", selectedAudit.id);
     } catch (error) {
       console.error("Erreur lors de l'export:", error);
     }
   };
 
-  // Fonction pour importer les données d'audit
+  // Fonction pour importer les donnÃ©es d'audit
   const handleImport = async (event) => {
     try {
       const file = event.target.files[0];
       if (!file) return;
-// TODO: Implémenter l'appel API pour l'import
+
+      // TODO: ImplÃ©menter l'appel API pour l'import
       // const formData = new FormData();
       // formData.append('file', file);
       // await axios.post(`${API_BASE_URL}/audits/import`, formData);
@@ -306,7 +307,7 @@ const handleAuditTypeChange = (e) => {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
   };
 
- // Modal d'édition
+  // Modal d'Ã©dition
   const EditModal = () => {
     if (!showEditModal) return null;
 
@@ -360,7 +361,7 @@ const handleAuditTypeChange = (e) => {
 
                   <div className="mb-4">
                     <label className="block text-sm font-semibold text-gray-700 mb-2 ">
-                      Département
+                      DÃ©partement
                     </label>
                     <input
                       type="text"
@@ -386,7 +387,7 @@ const handleAuditTypeChange = (e) => {
 
                   <div className="mb-6">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Date de début
+                      Date de dÃ©but
                     </label>
                     <input
                       type="date"
@@ -412,7 +413,7 @@ const handleAuditTypeChange = (e) => {
 
                   <div className="mb-6">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                     Méthodologie
+                      MÃ©thodologie
                     </label>
                     <input
                       type="text"
@@ -434,14 +435,14 @@ const handleAuditTypeChange = (e) => {
                       className="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-base"
                     >
                       <option value="En cours">En cours</option>
-                      <option value="Terminé">Terminé</option>
+                      <option value="TerminÃ©">TerminÃ©</option>
                       <option value="En attente">En attente</option>
                     </select>
                   </div>
 
                   <div className="col-span-2 mb-6">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                     Périmètre
+                      PÃ©rimÃ¨tre
                     </label>
                     <input
                       type="text"
@@ -465,7 +466,7 @@ const handleAuditTypeChange = (e) => {
                     type="submit"
                     className="bg-emerald-500 text-white active:bg-emerald-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg hover:bg-emerald-600 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   >
-                   Mettre à jour
+                    Mettre Ã  jour
                   </button>
                 </div>
               </form>
@@ -476,7 +477,7 @@ const handleAuditTypeChange = (e) => {
     );
   };
 
-  // Modal de détails
+  // Modal de dÃ©tails
   const DetailsModal = () => {
     if (!showModal || !selectedAudit) return null;
 
@@ -487,7 +488,7 @@ const handleAuditTypeChange = (e) => {
           <div className="modal-header">
             <div className="flex justify-between items-center">
               <h3 className="text-xl font-semibold text-gray-900">
-                 Détails de l'audit
+                DÃ©tails de l'audit
               </h3>
             </div>
           </div>
@@ -498,7 +499,7 @@ const handleAuditTypeChange = (e) => {
               {/* Informations gÃ©nÃ©rales */}
               <div>
                 <h3 className="font-semibold mb-4 text-lg">
-                  Informations générales
+                  Informations gÃ©nÃ©rales
                 </h3>
                 <div className="space-y-3">
                   <p>
@@ -520,7 +521,7 @@ const handleAuditTypeChange = (e) => {
                     </span>
                   </p>
                   <p>
-                    <span className="font-medium">Départementt:</span>{" "}
+                    <span className="font-medium">DÃ©partement:</span>{" "}
                     {selectedAudit.department}
                   </p>
                   <p>
@@ -535,7 +536,7 @@ const handleAuditTypeChange = (e) => {
                 <h3 className="font-semibold mb-4 text-lg">Planification</h3>
                 <div className="space-y-3">
                   <p>
-                    <span className="font-medium">Date de début</span>{" "}
+                    <span className="font-medium">Date de dÃ©but:</span>{" "}
                     {selectedAudit.startDate}
                   </p>
                   <p>
@@ -543,7 +544,7 @@ const handleAuditTypeChange = (e) => {
                     {selectedAudit.endDate}
                   </p>
                   <p>
-                    <span className="font-medium">Méthodologie:</span>{" "}
+                    <span className="font-medium">MÃ©thodologie:</span>{" "}
                     {selectedAudit.methodology}
                   </p>
                   <p>
@@ -557,10 +558,10 @@ const handleAuditTypeChange = (e) => {
                 </div>
               </div>
 
-            {/* Objectifs et périmètre */}
+              {/* Objectifs et pÃ©rimÃ¨tre */}
               <div>
                 <h3 className="font-semibold mb-4 text-lg">
-                 Objectifs et périmètre
+                  Objectifs et pÃ©rimÃ¨tre
                 </h3>
                 <div className="space-y-3">
                   <p>
@@ -580,10 +581,10 @@ const handleAuditTypeChange = (e) => {
 
               {/* RÃ©sultats */}
               <div>
-                <h3 className="font-semibold mb-4 text-lg">Résultats</h3>
+                <h3 className="font-semibold mb-4 text-lg">RÃ©sultats</h3>
                 <div className="space-y-3">
                   <p>
-                    <span className="font-medium">Écart:</span>
+                    <span className="font-medium">Ã‰cart:</span>
                     <span
                       className={`ml-2 ${getEcartColor(
                         selectedAudit.ecartPercentage
@@ -686,7 +687,7 @@ const handleAuditTypeChange = (e) => {
    const handleAddSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await createAudit(formData); // CREE DANS MONGO
+    const res = await createAudit(formData); // CrÃ©e dans MongoDB
     const nouveauAudit = res.data;
 
     // Ajoute le nouvel audit Ã  la liste actuelle sans refetch
@@ -703,7 +704,7 @@ const handleAuditTypeChange = (e) => {
 
   return (
     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white">
-      {/* En Attente */}
+      {/* En-tÃªte */}
       <div className="rounded-t mb-0 px-4 py-3 border-0">
         <div className="flex flex-wrap items-center justify-between">
           <div className="relative flex items-center">
@@ -754,7 +755,7 @@ const handleAuditTypeChange = (e) => {
       <div className="block w-full overflow-x-auto">
         {filteredAudits.length === 0 ? (
           <div className="text-center py-4 text-blueGray-500">
-            {searchTerm ? "Aucun audit trouvé" : "Aucun audit disponible"}
+            {searchTerm ? "Aucun audit trouvÃ©" : "Aucun audit disponible"}
           </div>
         ) : (
           <table className="items-center w-full bg-transparent border-collapse">
@@ -773,7 +774,7 @@ const handleAuditTypeChange = (e) => {
                   Auditeur
                 </th>
                 <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
-                  % Écart
+                  % Ã‰cart
                 </th>
                 <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                   Actions
@@ -787,7 +788,7 @@ const handleAuditTypeChange = (e) => {
                     {audit.name}
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    {audit.date}
+                    {audit.startDate?.substring(0, 10)}
                   </td>
                   <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     <span
@@ -809,7 +810,7 @@ const handleAuditTypeChange = (e) => {
                       <button
                         onClick={() => handleDetails(audit)}
                         className="p-2"
-                        title="Voir les détails"
+                        title="Voir les dÃ©tails"
                       >
                         <FaInfoCircle className="text-lg text-blue-500 hover:text-blue-700" />
                       </button>
@@ -836,20 +837,13 @@ const handleAuditTypeChange = (e) => {
         )}
       </div>
 
-       {/* Ajout du modal d'édition */}
+      {/* Ajout du modal d'Ã©dition */}
       <EditModal />
 
-      {/* Modal de détails existant */}
+      {/* Modal de dÃ©tails existant */}
       <DetailsModal />
     </div>
   );
-}
-
   
 
-
-
-
-
-
-
+}

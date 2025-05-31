@@ -26,7 +26,7 @@ export default function Auth() {
           <div
             className="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-cover"
             style={{
-              backgroundImage: `url(${require("../assets/img/log.jpg").default})`,
+              backgroundImage: `url(${require("../assets/img/log.jpg")})`,
               zIndex: -1,
               opacity: 0.25,
               filter: "blur(1px)",

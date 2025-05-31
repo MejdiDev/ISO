@@ -60,8 +60,3 @@ export default function FooterAdmin() {
     </>
   );
 }
-
-
-
-
-

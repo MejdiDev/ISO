@@ -125,8 +125,3 @@ export default function CardPageVisits() {
     </>
   );
 }
-
-
-
-
-

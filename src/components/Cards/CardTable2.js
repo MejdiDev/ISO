@@ -181,8 +181,3 @@ CardTable2.propTypes = {
 };
 
 export default CardTable2;
-
-
-
-
-

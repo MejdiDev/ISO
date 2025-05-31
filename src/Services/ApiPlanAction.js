@@ -29,8 +29,3 @@ const handleAddAction = () => {
     .then(data => setActions(prev => [...prev, data.action]))
     .catch(err => console.error("Erreur ajout :", err));
 };
-
-
-
-
-

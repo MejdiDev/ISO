@@ -31,8 +31,3 @@ export const deleteAudit = async (id) => {
 
 
 export default api;
-
-
-
-
-

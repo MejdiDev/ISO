@@ -257,10 +257,3 @@ export default function AnimatedLoginRegister() {
     </>
   );
 }
-
-
-
-
-
-
-

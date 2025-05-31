@@ -9,7 +9,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: -2;
 }
 
 /* ✅ Boîte principale */
@@ -33,7 +33,7 @@
 /* ✅ Zones formulaire */
 .form-box {
   width: 48%;
-  color: black;
+  color: white;
 }
 
 .form-box h1 {
@@ -63,7 +63,7 @@
       0 0 20px #0ef,
       0 0 35px #0ef,
       0 0 50px #0ef;
-    color: black;
+    color: #fff;
   }
 }
 
@@ -78,7 +78,7 @@
   width: 100%;
   padding: 12px 16px;
   font-size: 15px;
-  color: black;
+  color: #fff;
   background: transparent;
   border: 2px solid #0ef;
   border-radius: 8px;
@@ -132,7 +132,7 @@
 /* ✅ Section info */
 .info {
   width: 48%;
-  color: black;
+  color: white;
 }
 
 .info h1 {
@@ -147,7 +147,7 @@
   font-family: "Century Schoolbook", Georgia, serif;
   font-size: 20px;
   text-align: center;
-  color: black;
+  color: #fff;
   text-shadow:
     0 0 10px #0ef,
     0 0 20px #0ef,
@@ -167,7 +167,7 @@
       0 0 30px #0ef,
       0 0 60px #0ef,
       0 0 80px #0ef;
-    opacity: 1;
+    opacity: 0.95;
   }
   100% {
     text-shadow:
@@ -220,15 +220,85 @@
   }
 }
 
+/* ✅ Autres styles */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 /* ✅ Transitions login/register */
 .wrapper .form-box.login,
 .wrapper .form-box.register,
 .wrapper .info.login,
 .wrapper .info.register {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.wrapper .form-box.login,
+.wrapper .info.login {
   opacity: 1;
   visibility: visible;
-  position: relative;
-  transition: all 0.5s ease;
   transform: translateX(0);
 }
 
+.wrapper.active .form-box.login,
+.wrapper.active .info.login {
+  transform: translateX(-100%);
+}
+
+.wrapper.active .form-box.register,
+.wrapper.active .info.register {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.wrapper .form-box.register,
+.wrapper .info.register {
+  transform: translateX(100%);
+}
+
+.form-box.login,
+.info.login {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s ease;
+}
+
+.form-box.register,
+.info.register {
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+.wrapper.active .form-box.login,
+.wrapper.active .info.login {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wrapper.active .form-box.register,
+.wrapper.active .info.register {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}

@@ -113,8 +113,3 @@ const IndexDropdown = () => {
 };
 
 export default IndexDropdown;
-
-
-
-
-

@@ -448,8 +448,3 @@ export default function NonConformities() {
     </section>
   );
 } 
-
-
-
-
-

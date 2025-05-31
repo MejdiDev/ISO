@@ -182,8 +182,3 @@ export default function CardSettings() {
     </>
   );
 }
-
-
-
-
-

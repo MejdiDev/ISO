@@ -32,8 +32,3 @@ const statusLabels = {
   "non-compliant": "Non conforme",
   pending: "En attente",
 };
-
-
-
-
-

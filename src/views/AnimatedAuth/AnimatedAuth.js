@@ -68,8 +68,3 @@ export default function AnimatedLoginRegister() {
     </div>
   );
 }
-
-
-
-
-

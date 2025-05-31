@@ -6,9 +6,8 @@ import Navbar from "components/Navbars/AuthNavbar.js";
 import Login from "../views/auth/Login";
 import Forget from "../views/auth/forget";
 import Register from "../views/auth/Register";
-import AnimatedLoginRegister from "../views/auth/AnimatedLoginRegister";
+import AnimatedLoginRegister from "../views/auth/AnimatedLoginRegister"; 
 
-import logImage from "../assets/img/log.jpg"; // ✅ image déplacée dans src/assets/img
 import "../styles/animations.css";
 
 export default function Auth() {
@@ -27,7 +26,7 @@ export default function Auth() {
           <div
             className="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-cover"
             style={{
-              backgroundImage: `url(${logImage})`,
+              backgroundImage: `url(${require("../assets/img/log.jpg")})`,
               zIndex: -1,
               opacity: 0.25,
               filter: "blur(1px)",

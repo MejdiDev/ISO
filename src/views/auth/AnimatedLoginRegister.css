@@ -9,7 +9,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: -2;
 }
 
 /* ✅ Boîte principale */
@@ -33,7 +33,7 @@
 /* ✅ Zones formulaire */
 .form-box {
   width: 48%;
-  color: black;
+  color: white;
 }
 
 .form-box h1 {
@@ -63,7 +63,7 @@
       0 0 20px #0ef,
       0 0 35px #0ef,
       0 0 50px #0ef;
-    color: black;
+    color: #fff;
   }
 }
 
@@ -78,7 +78,7 @@
   width: 100%;
   padding: 12px 16px;
   font-size: 15px;
-  color: black;
+  color: #fff;
   background: transparent;
   border: 2px solid #0ef;
   border-radius: 8px;
@@ -132,7 +132,7 @@
 /* ✅ Section info */
 .info {
   width: 48%;
-  color: black;
+  color: white;
 }
 
 .info h1 {
@@ -147,7 +147,7 @@
   font-family: "Century Schoolbook", Georgia, serif;
   font-size: 20px;
   text-align: center;
-  color: black;
+  color: #fff;
   text-shadow:
     0 0 10px #0ef,
     0 0 20px #0ef,
@@ -240,7 +240,7 @@ button:focus {
 .wrapper .form-box.register,
 .wrapper .info.login,
 .wrapper .info.register {
-  opacity: 1;
+  opacity: 0;
   visibility: hidden;
   position: absolute;
   transition: all 0.5s ease;
@@ -281,7 +281,7 @@ button:focus {
 .form-box.register,
 .info.register {
   transform: translateX(100%);
-  opacity: 1;
+  opacity: 0;
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -291,7 +291,7 @@ button:focus {
 .wrapper.active .form-box.login,
 .wrapper.active .info.login {
   transform: translateX(-100%);
-  opacity: 1;
+  opacity: 0;
   visibility: hidden;
 }
 
@@ -302,4 +302,3 @@ button:focus {
   visibility: visible;
   position: relative;
 }
-

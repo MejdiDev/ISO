@@ -12,6 +12,5 @@ select {
 /* Dark mode pour les options */
 select option {
   background: #2d3748;
-  color: black;
+  color: white;
 }
-

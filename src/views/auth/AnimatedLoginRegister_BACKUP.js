@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import "./AnimatedLoginRegister.css";
-import cyberImage from '../assets/img/';
+import cyberImage from '../../assets/img/images6.jpeg';
 
 export default function AnimatedLoginRegister() {
   const location = useLocation();
@@ -257,8 +257,3 @@ export default function AnimatedLoginRegister() {
     </>
   );
 }
-
-
-
-
-

@@ -81,8 +81,3 @@ CardStats.propTypes = {
   // from tailwindcss
   statIconColor: PropTypes.string,
 };
-
-
-
-
-

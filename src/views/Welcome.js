@@ -1,4 +1,5 @@
 /*eslint-disable*/
+/*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -9,6 +10,14 @@ import { GrDocumentPdf } from "react-icons/gr";
 import { MdOutlineTimer } from "react-icons/md";
 import { FcDataProtection } from "react-icons/fc";
 import { MdReportGmailerrorred } from "react-icons/md";
+import auditImage from "../assets/img/audit2.jpeg";
+import doc1 from "../assets/img/doc1_500x658.webp";
+import doc2 from "../assets/img/doc_526x634.jpg";
+import doc3 from "../assets/img/doc2.jpg";
+import risqueImage from "../assets/img/risque_1781x1232.jpeg";
+import loginImg from "../assets/img/login.jpg";
+import profileImg from "../assets/img/profile.jpg";
+
 
 export default function Welcome() {
   return (
@@ -205,23 +214,23 @@ export default function Welcome() {
 
             <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
               <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
-                
-                <img
-                  alt="..."
-                  src={require("assets/img/doc1_500x658.webp")}
-                  className="w-full align-middle rounded-lg absolute shadow-lg -top-160-px left-260-px max-w-210-px"
-                />
-                <img
-                  alt="..."
-                  src={require("assets/img/doc_526x634.jpg")}
-                  className="w-full align-middle rounded-lg absolute shadow-lg max-w-180-px -top-225-px left-40-px z-2"
-                />
-                <img
-                  alt="..."
-                  src={require("assets/img/doc2.jpg")}
-                  className="w-full align-middle rounded-lg absolute shadow-2xl max-w-200-px -left-50-px top-25-px"
-                />
-                
+              <img
+  alt="..."
+  src={doc1}
+  className="w-full align-middle rounded-lg absolute shadow-lg -top-160-px left-260-px max-w-210-px"
+/>
+<img
+  alt="..."
+  src={doc2}
+  className="w-full align-middle rounded-lg absolute shadow-lg max-w-180-px -top-225-px left-40-px z-2"
+/>
+
+<img
+  alt="..."
+  src={doc3}
+  className="w-full align-middle rounded-lg absolute shadow-2xl max-w-200-px -left-50-px top-25-px"
+/>
+
                 {/* <img
                   alt="..."
                   src={require("assets/img/component-btn-pink.png")}
@@ -334,7 +343,8 @@ export default function Welcome() {
                   transform:
                     "scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg)",
                 }}
-                src={require("assets/img/risque_1781x1232.jpeg")}
+               src={require("assets/img/risque_1781x1232.jpeg")}
+
               />
             </div>
           </div>
@@ -365,10 +375,10 @@ export default function Welcome() {
                     <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words 
                     bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                       <img
-                        alt="..."
-                        className="align-middle border-none max-w-full h-auto rounded-lg"
-                        src={require("assets/img/login.jpg")}
-                      />
+  alt="..."
+  className="align-middle border-none max-w-full h-auto rounded-lg"
+  src={loginImg}
+/>
                     </div>
                   </Link>
                 </div>
@@ -380,11 +390,11 @@ export default function Welcome() {
                   <Link to="/profile">
                     <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words 
                     bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
-                      <img
-                        alt="..."
-                        className="align-middle border-none max-w-full h-auto rounded-lg"
-                        src={require("assets/img/profile.jpg")}
-                      />
+                     <img
+  alt="..."
+  className="align-middle border-none max-w-full h-auto rounded-lg"
+  src={profileImg}
+/>
                     </div>
                   </Link>
                 </div>

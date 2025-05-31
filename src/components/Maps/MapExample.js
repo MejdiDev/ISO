@@ -61,8 +61,3 @@ function MapExample() {
 }
 
 export default MapExample;
-
-
-
-
-

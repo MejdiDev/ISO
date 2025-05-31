@@ -9,29 +9,29 @@ import {  useHistory } from "react-router-dom";
 import { login } from "../../Services/ApiUsers"; // adapter le chemin selon ton projet
 
 export default function Login() {
-  // Ã‰tat local pour stocker les donnÃ©es du formulaire (email, mot de passe)
+  // État local pour stocker les données du formulaire (email, mot de passe)
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  // Hook de navigation de React Router (pour rediriger aprÃ¨s connexion)
+  // Hook de navigation de React Router (pour rediriger après connexion)
   const history = useHistory();
-  // Fonction appelÃ©e Ã  chaque modification d'un champ (email ou mot de passe)
+  // Fonction appelée à chaque modification d'un champ (email ou mot de passe)
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Mise Ã  jour dynamique du champ concernÃ© dans le state
+    // Mise à jour dynamique du champ concerné dans le state
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
-  // Fonction appelÃ©e lors du clic sur le bouton "Se connecter"
+  // Fonction appelée lors du clic sur le bouton "Se connecter"
   // const handleLogin = async (e) => {
   //   e.preventDefault();
-
+    
   //   // Validation simple
   //   if (!formData.email || !formData.password) {
   //     toast.error('Veuillez remplir tous les champs');
@@ -42,19 +42,19 @@ export default function Login() {
   //     const response = await login(formData);
 
   //     if (response.status === 200) {
-  //       // âœ… Connexion rÃ©ussie
-  //       toast.success("Connexion rÃ©ussie !");
-  //       console.log("Connexion rÃ©ussie :", response.data);
+  //       // ✅ Connexion réussie
+  //       toast.success("Connexion réussie !");
+  //       console.log("Connexion réussie :", response.data);
 
-  //       // Exemple : enregistrer un token dans localStorage si nÃ©cessaire
+  //       // Exemple : enregistrer un token dans localStorage si nécessaire
   //       // localStorage.setItem("token", response.data.token);
 
-  //       // Redirection vers une autre page aprÃ¨s connexion (exemple : tableau de bord)
+  //       // Redirection vers une autre page après connexion (exemple : tableau de bord)
   //       navigate("/dashboard");
   //     } else {
   //       // Si le backend ne renvoie pas 200, on affiche une alerte
-  //       alert("Ã‰chec de la connexion. Veuillez rÃ©essayer.");
-  //       toast.error("Ã‰chec de la connexion.");
+  //       alert("Échec de la connexion. Veuillez réessayer.");
+  //       toast.error("Échec de la connexion.");
   //     }
   //   } catch (error) {
   //     // Gestion des erreurs (ex : mauvais identifiants ou erreur serveur)
@@ -65,25 +65,25 @@ export default function Login() {
   // };
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    
     if (!formData.email || !formData.password) {
       toast.error('Veuillez remplir tous les champs');
       return;
     }
-
+  
     try {
       const response = await login(formData);
-
-      // Debug: Affiche la rÃ©ponse complÃ¨te
-      console.log("RÃ©ponse complÃ¨te:", response);
-
+      
+      // Debug: Affiche la réponse complète
+      console.log("Réponse complète:", response);
+  
       if (response.token) {
         localStorage.setItem('token', response.token);
-        toast.success("Connexion rÃ©ussie !");
+        toast.success("Connexion réussie !");
         history.push("/dashboard");
       }
     } catch (error) {
-      console.error("Erreur dÃ©taillÃ©e:", error);
+      console.error("Erreur détaillée:", error);
       toast.error(error.message);
     }
   };
@@ -102,7 +102,7 @@ export default function Login() {
                 </div>
                 <div className="btn-wrapper text-center">
                   {/* <button
-                    className="bg-white active:bg-blueGray-50 text-blueGray-700
+                    className="bg-white active:bg-blueGray-50 text-blueGray-700 
                     font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2
                      mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
@@ -110,7 +110,7 @@ export default function Login() {
                     <img
                       alt="..."
                       className="w-5 mr-1"
-                      src={require("assets/img/github.svg").default}
+                      src={require("assets/img/github.svg")}
                     />
                     Github
                   </button> */}
@@ -121,7 +121,7 @@ export default function Login() {
                     <img
                       alt="..."
                       className="w-5 mr-1"
-                      src={require("assets/img/google.svg").default}
+                      src={require("assets/img/google.svg")}
                     />
                     Google
                   </button>
@@ -176,14 +176,14 @@ export default function Login() {
                         className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
                       />
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
-                        MÃ©moriser le mot de passe
+                        Mémoriser le mot de passe
                       </span>
                     </label>
                   </div>
 
                   <div className="text-center mt-6">
                     <button
-                      className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold
+                      className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold 
                       uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="submit"
                       onClick={handleLogin}
@@ -198,12 +198,12 @@ export default function Login() {
             <div className="flex flex-wrap mt-6 relative">
               <div className="w-1/2">
                 <Link to="/auth/forget" className="text-blueGray-200">
-                  <small>Mot de passe oubliÃ©?</small>
+                  <small>Mot de passe oublié?</small>
                 </Link>
               </div>
               <div className="w-1/2 text-right">
                 <Link to="/auth/register" className="text-blueGray-200">
-                  <small>CrÃ©er un naouveau compte</small>
+                  <small>Créer un naouveau compte</small>
                 </Link>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function Login() {
     </>
   );
 }
-// // Import des hooks React nÃ©cessaires
+// // Import des hooks React nécessaires
 // import React, { useState } from "react";
 
 //   return (
@@ -237,7 +237,7 @@ export default function Login() {
 //                     <img
 //                       alt="..."
 //                       className="w-5 mr-1"
-//                       src={require("assets/img/google.svg").default}
+//                       src={require("assets/img/google.svg")}
 //                     />
 //                     Google
 //                   </button>
@@ -283,7 +283,7 @@ export default function Login() {
 //                     />
 //                   </div>
 
-//                   {/* Checkbox MÃ©moriser mot de passe */}
+//                   {/* Checkbox Mémoriser mot de passe */}
 //                   <div>
 //                     <label className="inline-flex items-center cursor-pointer">
 //                       <input
@@ -292,7 +292,7 @@ export default function Login() {
 //                         className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
 //                       />
 //                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
-//                         MÃ©moriser le mot de passe
+//                         Mémoriser le mot de passe
 //                       </span>
 //                     </label>
 //                   </div>
@@ -311,16 +311,16 @@ export default function Login() {
 //               </div>
 //             </div>
 
-//             {/* Liens vers mot de passe oubliÃ© et crÃ©ation de compte */}
+//             {/* Liens vers mot de passe oublié et création de compte */}
 //             <div className="flex flex-wrap mt-6 relative">
 //               <div className="w-1/2">
 //                 <Link to="/auth/forget" className="text-blueGray-200">
-//                   <small>Mot de passe oubliÃ© ?</small>
+//                   <small>Mot de passe oublié ?</small>
 //                 </Link>
 //               </div>
 //               <div className="w-1/2 text-right">
 //                 <Link to="/auth/register" className="text-blueGray-200">
-//                   <small>CrÃ©er un nouveau compte</small>
+//                   <small>Créer un nouveau compte</small>
 //                 </Link>
 //               </div>
 //             </div>
